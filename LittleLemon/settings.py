@@ -59,20 +59,35 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'LittleLemon.urls'
 
 TEMPLATES = [
+
     {
+
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+
+        'DIRS': [BASE_DIR / 'templates'],  # Add this line
+
         'APP_DIRS': True,
+
         'OPTIONS': {
+
             'context_processors': [
+
                 'django.template.context_processors.debug',
+
                 'django.template.context_processors.request',
+
                 'django.contrib.auth.context_processors.auth',
+
                 'django.contrib.messages.context_processors.messages',
+
             ],
+
         },
+
     },
+
 ]
+
 
 WSGI_APPLICATION = 'LittleLemon.wsgi.application'
 
@@ -142,3 +157,18 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_RENDERER_CLASSES': [
+#         'rest_framework.renderers.JSONRenderer',
+#         'rest_framework.renderers.BrowsableAPIRenderer',
+#     ],
+#     'DEFAULT_FILTER_BACKENDS': [
+#         'django_filters.rest_framework.DjangoFilterBackend',
+#         'rest_framework.filters.OrderingFilter',
+#         'rest_framework.filters.SearchFilter',
+#     ]
+    
+# }
+
